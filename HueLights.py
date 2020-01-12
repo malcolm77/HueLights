@@ -1,3 +1,7 @@
+# HueLights.py
+# 
+# Main code file for controlling Hue Lights
+
 import requests
 import json
 import sys
@@ -16,7 +20,7 @@ def mybedroom(state):
     elif state == "off":
         payload = {'on':False}
     r = requests.put(url, json=payload)
-    print (r.text)
+    # print (r.text)
 
 def loungeroom(state):
     lightNo = "5"
@@ -26,8 +30,7 @@ def loungeroom(state):
     elif state == "off":
         payload = {'on':False}
     r = requests.put(url, json=payload)
-    #if json string returned does not contain "success" then
-    #  print (r.text)
+    # print (r.text)
 
 def dinngingroom(state):
     lightNo = "6"
@@ -37,11 +40,10 @@ def dinngingroom(state):
     elif state == "off":
         payload = {'on':False}
     r = requests.put(url, json=payload)
-    #if json string returned does not contain "success" then
-    print (r.text)
+    # print (r.text)
 
 
 # loungeroom("on")
-dinngingroom("on")
+# dinngingroom("on")
 # mybedroom("on")
 

@@ -1,4 +1,4 @@
-Hue Light Programming
+Hue Light Programming Notes
 
 # Create new user on bridge; push button on bridge and then execute curl command within 30 seconds
 curl -X POST -d '{"devicetype": "HueLights#API"}' http://192.168.1.42/api

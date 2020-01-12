@@ -1,10 +1,16 @@
+# get-light-names.py
+#
+# Example of how to get the list of lights from the bridge
+# then iteriate through the list and display the name of each list as well as its number
+
 import json 
 import requests
 
-response = requests.get("http://192.168.1.126/api/qxb5PJleolvND8RAvqokpuj1eM7o4N--9bdavDAs/lights/")
-lights = json.loads(response.text)
+bridgeIP = "192.168.1.126"
+userName = "qxb5PJleolvND8RAvqokpuj1eM7o4N--9bdavDAs"
 
-# print( lights['4']['name'] )
+response = requests.get("http://" + bridgeIP + "/api/" + userName + "/lights/")
+lights = json.loads(response.text)
 
 for light in lights:
     print (lights[light]['name'] + " (" + light + ")" )
