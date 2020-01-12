@@ -5,7 +5,7 @@ import sys
 bridgeIP = "192.168.1.126"
 userName = "qxb5PJleolvND8RAvqokpuj1eM7o4N--9bdavDAs"
 
-# this is what the url should look like
+# this is what the url should look like, see newuser.txt for how to create a user
 # url = "http://192.168.1.126/api/qxb5PJleolvND8RAvqokpuj1eM7o4N--9bdavDAs/lights/5/state" 
 
 def mybedroom(state):
