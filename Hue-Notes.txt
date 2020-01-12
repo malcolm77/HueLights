@@ -1,0 +1,22 @@
+Hue Light Programming
+
+# Create new user on bridge; push button on bridge and then execute curl command within 30 seconds
+curl -X POST -d '{"devicetype": "HueLights#API"}' http://192.168.1.42/api
+
+# Expected response contains randomly generated username to use in future API calls
+[{"success":{"username":"qxb5PJleolvND8RAvqokpuj1eM7o4N--9bdavDAs"}}]
+
+# to get list of lights
+http://192.168.1.126/api/qxb5PJleolvND8RAvqokpuj1eM7o4N--9bdavDAs/lights
+
+# to turn light 5 on
+curl -X PUT -d '{"on":true}' http://192.168.1.126/api/qxb5PJleolvND8RAvqokpuj1eM7o4N--9bdavDAs/lights/5/state
+
+# to turn light 5 off
+curl -X PUT -d '{"on”:false}’ http://192.168.1.126/api/qxb5PJleolvND8RAvqokpuj1eM7o4N--9bdavDAs/lights/5/state
+
+# my list of lights
+#4 - My bedroom light
+#5 - lounge light
+#6 - Dinning room light
+
