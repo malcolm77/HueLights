@@ -1,0 +1,17 @@
+
+
+$ git commit *
+[master cd93770] Updating the README.md with useful information
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 486 bytes | 486.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/malcolm77/HueLights.git
+   6324ace..cd93770  master -> master
+
+$   
