@@ -11,3 +11,5 @@ is this script gets the list of lights and returns thier names and numbers
 
 *-example.json
 an example of the data returned from the Hue Bridge
+
+this is a test
