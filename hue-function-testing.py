@@ -45,6 +45,12 @@ def ListLightStatus():
         else:
             print("The " + lights[light]['name'] + " is  :  not reachable")
 
+def GetLightState(light):
+    if lights[light]['state']['on']:
+        return "On"
+    else:
+        return "Off"
+
 def CheckLightStatus(light):
     if lights[light]['state']['reachable']:
         return True
@@ -58,12 +64,13 @@ def GetLightName(light):
 
 GetJSON()
 
+print ( "You have " + str(len(lights)) + " attached to your Hub" )
+
 for light in lights:
     if CheckLightStatus(light):
-        print ("Light " + light + " is online")
+        print (GetLightName(light) + " is online and is currently " + GetLightState(light) )
     else:
-        print ("Light " + GetLightName(light) + " is offline")
-
+        print (GetLightName(light) + " is offline and may be turned " + GetLightState(light) )
 
 # check if light number is in list of lights
 #if IsValidLight('5'):

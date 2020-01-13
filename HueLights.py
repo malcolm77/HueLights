@@ -25,7 +25,6 @@ def GetJSON():
     global lights
     lights = devices["lights"]
     
-
 # specify lightNo to switch and state to switch it to
 def LightSwitch(lightNo,state):
     if lightNo != None and state != None:   # check to make sure both lightNo nor state have a value
@@ -37,16 +36,15 @@ def LightSwitch(lightNo,state):
                 payload = {'on':False}
             requests.put(url, json=payload)
 
-# Display a list of the lights and thier numbers
-def ListLights():
-    # print the number of lights
-    print ( 'Number of lights: ' + str(len(lights)) )
-    # print each light name and number
-    for light in lights:
-        print(lights[light]['name'] + ' is light number : ' + light)
+# return the on / off status of the specified light
+def GetLightState(light):
+    if lights[light]['state']['on']:
+        return "On"
+    else:
+        return "Off"
 
 # Returns reachable state of light number
-def CheckLightStatus(light):
+def GetLightStatus(light):
     if lights[light]['state']['reachable']:
         return True
     else:
@@ -60,10 +58,15 @@ def GetLightName(light):
 
 if __name__ == "__main__":
     GetJSON()
-    LightSwitch("5","off")
 
-    # loungeroom("on")
-    # dinngingroom("on")
-    # mybedroom("on")
+    print ( "You have " + str(len(lights)) + " attached to your Hub" )
 
+    for light in lights:
+        if GetLightStatus(light):
+            print (GetLightName(light) + " is online and is currently " + GetLightState(light) )
+        else:
+            print (GetLightName(light) + " is offline and may be turned " + GetLightState(light) )
+
+
+    #LightSwitch("5","off")
 
