@@ -19,6 +19,9 @@ devices = json.loads(response.text)
 # configs = devices["config"]
 # but you don't need to
 
+lights = devices["lights"]
+
+
 # get the name and ip address of the hub
 print ( "Your hub is called " + devices["config"]["name"] + " and is on IP Address " + devices["config"]["ipaddress"] )
 
