@@ -8,7 +8,7 @@ import requests
 
 print ("-----------------------------------------------------------------------------")
 
-bridgeIP = "192.168.1.126"
+bridgeIP = "192.168.1.152"
 userName = "qxb5PJleolvND8RAvqokpuj1eM7o4N--9bdavDAs"
 
 response = requests.get("http://" + bridgeIP + "/api/" + userName + "/")
@@ -34,6 +34,6 @@ for group in devices["groups"]:
 
 # example of how to get sub nob elements from another program
 # for device in devices:
-    #print ( devices[device] )
+    # print ( devices[device] )
     # print datastore["office"]["parking"]["style"]
     

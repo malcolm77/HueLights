@@ -6,7 +6,7 @@
 import json 
 import requests
 
-bridgeIP = "192.168.1.126"
+bridgeIP = "192.168.1.152"
 userName = "qxb5PJleolvND8RAvqokpuj1eM7o4N--9bdavDAs"
 
 response = requests.get("http://" + bridgeIP + "/api/" + userName + "/lights/")
