@@ -20,6 +20,7 @@ $arr = json_decode($response, true);
 // echo "Brightness : " . $arr['lights']['4']['state']['bri'] . "<br>";
 // echo "Name       : " . $arr['lights']['4']['name'] . "<br>";
 
+
 foreach ($arr['lights'] as $light) {
 	// echo "Light : " . $light['name'] . ": " . $light['state']['on'] . "<br>";
 	echo "Light : " . $light['name'] . ": ";
@@ -33,8 +34,26 @@ foreach ($arr['lights'] as $light) {
 }
 
 echo '<HR>';
+
+
+echo '<form>';
+foreach ($arr['lights'] as $light) {
+	$state = $light['state']['on'];
+	if ($state != "") { 
+  		echo '<input type="radio" id=' . $light['name'] . ' value=' . $light['name'] . ' checked >';
+	} else {
+  		echo '<input type="radio" id=' . $light['name'] . ' value=' . $light['name'] . '>';
+	}
+	
+  	echo '<label for=' . $light['name'] . '>' . $light['name'] . '</label>';
+  	echo '<br>';
+}
+echo '</form>';
+
+
+echo '<HR>';
 echo '<strong>response</strong><br>';
-// echo $response;
+echo $response;
 
 echo '<HR>';
 echo '<br>';
