@@ -10,7 +10,7 @@ import time
 # GLOBAL variables
 devices = {}
 light = {}
-bridgeIP = "192.168.1.152"
+bridgeIP = "192.168.1.151"
 userName = "qxb5PJleolvND8RAvqokpuj1eM7o4N--9bdavDAs"
 
 # this is what the url should look like, see Hue-Notes.txt for how to create a user
@@ -88,11 +88,15 @@ if __name__ == "__main__":
 
     print ("--------------------------------------------------------")
 # LightSwitch("5","on")
-    
+
+    for light in lights:
+        print (GetLightName(light) + "," + GetLightState(light) )
+
+
 #GetLightBrightness("5")
 #SetLightBrightness("5",250)
 # GetLightBrightness("5")
-#GetLightInfo("5")
+# GetLightInfo("13")
 
 # Slowly dim the light
 # for x in range(254,1,-5):

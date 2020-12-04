@@ -8,7 +8,7 @@ import requests
 
 print ("-----------------------------------------------------------------------------")
 
-bridgeIP = "192.168.1.152"
+bridgeIP = "192.168.1.151"
 userName = "qxb5PJleolvND8RAvqokpuj1eM7o4N--9bdavDAs"
 
 response = requests.get("http://" + bridgeIP + "/api/" + userName + "/")
@@ -19,11 +19,16 @@ devices = json.loads(response.text)
 # configs = devices["config"]
 # but you don't need to
 
-lights = devices["lights"]
-
-
 # get the name and ip address of the hub
 print ( "Your hub is called " + devices["config"]["name"] + " and is on IP Address " + devices["config"]["ipaddress"] )
+
+print ("You have the following lights configure on your hub:")
+lights = devices["lights"]
+for light in lights:
+    print (lights[light]['name'] + " (" + light + ")" )
+    # print datastore["office"]["parking"]["style"]
+
+print ("-----------------------------------------------------")
 
 # get the name of group number 5
 # print ( devices["groups"]["5"]["name"] )
@@ -37,3 +42,10 @@ for group in devices["groups"]:
     # print ( devices[device] )
     # print datastore["office"]["parking"]["style"]
     
+print ("-----------------------------------------------------")
+
+print ("You have the following sensors configure on your hub:")
+sensors = devices["sensors"]
+for sensor in sensors:
+    print (sensors[sensor]['name'] + " (" + sensor + ")" )
+    # print datastore["office"]["parking"]["style"]
