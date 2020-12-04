@@ -49,3 +49,7 @@ sensors = devices["sensors"]
 for sensor in sensors:
     print (sensors[sensor]['name'] + " (" + sensor + ")" )
     # print datastore["office"]["parking"]["style"]
+
+print ("-----------")
+print ("sensor info")
+print (sensors["59"]["state"]["temperature"])
